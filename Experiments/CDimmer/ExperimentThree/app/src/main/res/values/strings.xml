@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ExperimentThree</string>
+    <string name="Italics">Italics</string>
+    <string name="Bold">Bold</string>
+    <string name="Underline">Underline</string>
+    <string name="Sentence">She sells seashells by the seashore.</string>
+    <string name="ItSentence"><i>She sells seashells by the seashore.</i></string>
+    <string name="UnSentence"><u>She sells seashells by the seashore.</u></string>
+    <string name="BldSentence"><b>She sells seashells by the seashore.</b></string>
+
+</resources>
