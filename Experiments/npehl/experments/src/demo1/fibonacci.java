@@ -1,30 +1,39 @@
 package demo1;
 
-import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-public class fibonacci
+public class LoginTest
 {
 	public static void main(String[] args)
 	{
-		System.out.println("Enter how many numbers you want to see of the fibonacci sequece");
-		System.out.println("NOTE: doesn't work after 47 numbers in b/c value exceeds int.MAX");
-		Scanner scan = new Scanner(System.in);
-		int num = scan.nextInt();
-		printNumbers(num);
-	}
-	public static void printNumbers(int num)
-	{
-		int first = 0;
-		int second = 1;
-		int temp;
-		System.out.println(first);
-		System.out.println(second);
-		for(int i=2; i<num; i++)
-		{
-			temp = first + second;
-			System.out.println(temp);
-			first = second;
-			second = temp;
-		}
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		
+		frame.setSize(300,300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		frame.add(panel);
+		
+		panel.setLayout(null);
+		
+		JLabel label = new JLabel("Username");
+		label.setBounds(10, 20, 80, 25);
+		JLabel pass = new JLabel("Password");
+		pass.setBounds(10, 65, 80, 25);
+		
+		panel.add(label);
+		panel.add(pass);
+		
+		JTextField userText = new JTextField();
+		userText.setBounds(75, 20, 165, 25);
+		panel.add(userText);
+		JTextField password = new JTextField();
+		password.setBounds(75, 65, 165, 25);
+		panel.add(password);
+		
+		frame.setVisible(true);
 	}
 }
