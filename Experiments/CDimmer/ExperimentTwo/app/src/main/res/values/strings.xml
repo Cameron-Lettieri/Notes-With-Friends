@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ExperimentTwo</string>
+    <string name="Example">This sentence is only for example of alignment.</string>
+    <string name="Center">Center</string>
+    <string name="Left">Left</string>
+    <string name="Right">Right</string>
+</resources>
