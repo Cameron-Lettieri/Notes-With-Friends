@@ -2,6 +2,7 @@ package com.example.experiment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class ImageScreen extends AppCompatActivity {
