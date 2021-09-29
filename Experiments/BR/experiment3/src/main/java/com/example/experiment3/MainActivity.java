@@ -21,9 +21,10 @@ public class MainActivity extends AppCompatActivity {
         String username = editTextUsername.getText().toString();
         EditText editTextPassword = (EditText) findViewById(R.id.Password);
         String password = editTextPassword.getText().toString();
-        if(username.equals("username") && password.equals("password")){
+        if(username.equals("123") && password.equals("123")){
             startActivity(pressed);
         }
 
     }
+
 }
