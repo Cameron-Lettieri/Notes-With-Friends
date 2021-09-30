@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Notes With Friends</string>
+    <string name="UsernameText">Username</string>
+    <string name="PasswordText">Password</string>
+    <string name="UsernameTextbox">Username</string>
+    <string name="PasswordTextbox">PasswordTextbox</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="Login">Login</string>
+    <string name="WordsWithFriends">Words With Friends</string>
+</resources>
