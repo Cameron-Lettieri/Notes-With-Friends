@@ -23,21 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        String url = "https://reqres.in/api/users?page=2";
+        String url = "https://34c9be26-288a-4686-97dd-369551556f50.mock.pstmn.io/object/";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        System.out.println("OnResponse method activated.");
-                        try {
-                            System.out.println("What I want: " + response.getString("total"));
-                            textView.setText(response.getString("total"));
-                        } catch (JSONException e) {
-                            System.out.println("Error occured.");
-                            e.printStackTrace();
-                        }
+                        textView.setText(response.toString());
                     }
                 }, new Response.ErrorListener() {
 

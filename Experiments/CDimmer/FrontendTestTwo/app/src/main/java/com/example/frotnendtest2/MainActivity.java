@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                         String email = jsonObject.getString("email");
 
                         jsonResponses.add(email);
-                        System.out.println("What I am looking for: " + email);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
