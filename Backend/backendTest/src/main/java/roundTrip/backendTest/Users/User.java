@@ -1,4 +1,4 @@
-package experiments.databaseprototype.Users;
+package roundTrip.backendTest.Users;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import experiments.databaseprototype.Notes.*;
+import roundTrip.backendTest.Notes.*;
 
 import java.util.ArrayList;
 import java.util.List;

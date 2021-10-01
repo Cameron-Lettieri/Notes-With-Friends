@@ -1,4 +1,4 @@
-package experiments.databaseprototype.Users;
+package roundTrip.backendTest.Users;
 
 import java.util.List;
 
@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-import experiments.databaseprototype.Notes.NoteRepository;
-import experiments.databaseprototype.Users.UserRepository;
-import experiments.databaseprototype.Notes.Note;
+import roundTrip.backendTest.Notes.*;
 
 
 
