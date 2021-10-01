@@ -2,14 +2,17 @@ package com.example.login.controller;
 
 import java.util.Objects;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.example.login.domain.User;
 import com.example.login.service.UserService;
+
+
 
 @Controller
 public class UserController 
@@ -27,7 +30,7 @@ public class UserController
 	}
 	
 	@PostMapping("/login")
-	public Stirng login(@ModelAttribute("user") User user)
+	public String login(@ModelAttribute("user") User user)
 	{
 		User aUser =  userService.login(user.getUsername(), user.getPassword());
 		System.out.print(aUser);
