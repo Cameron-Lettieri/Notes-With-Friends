@@ -18,11 +18,7 @@ import experiments.databaseprototype.Notes.NoteRepository;
 import experiments.databaseprototype.Users.UserRepository;
 import experiments.databaseprototype.Notes.Note;
 
-/**
- * 
- * @author Nick Pehl, Cam Lettieri
- * 
- */ 
+
 
 @RestController
 public class UserController {
