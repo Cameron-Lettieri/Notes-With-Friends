@@ -13,11 +13,6 @@ import experiments.databaseprototype.Notes.*;
 
 import java.util.ArrayList;
 import java.util.List;
-/**
- * 
- * @author Nick Pehl, Cam Lettieri
- * 
- */ 
 
 @Entity
 public class User {
