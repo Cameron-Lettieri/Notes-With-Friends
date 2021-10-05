@@ -57,17 +57,17 @@ public class UserController {
         return userRepository.findById(id);
     }   
     
-//    @PutMapping("/users/{userId}/notes/{noteID}")
-//    String assignNoteToUser(@PathVariable int userId,@PathVariable int noteId){
-//        User user = userRepository.findById(userId);
-//        Note note = noteRepository.findById(noteId);
-//        if(user == null || note == null)
-//            return failure;
-//        note.setUser(user);
-//        user.addNote(note);
-//        userRepository.save(user);
-//        return success;
-//    }
+    @PutMapping("/users/{userId}/notes/{noteID}")
+    String assignNoteToUser(@PathVariable int userId,@PathVariable int noteId){
+        User user = userRepository.findById(userId);
+        Note note = noteRepository.findById(noteId);
+        if(user == null || note == null)
+            return failure;
+        note.setUser(user);
+        user.addNote(note);
+        userRepository.save(user);
+        return success;
+    }
 
     @DeleteMapping(path = "/users/{id}")
     String deleteUser(@PathVariable int id){

@@ -1,5 +1,7 @@
 package roundTrip.backendTest.Notes;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -8,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 	    
 	    Note findById(int id);
 
-	   // @Transactional
+	   @Transactional
 	    void deleteById(int id);
 	}
