@@ -14,7 +14,7 @@
 	<name>backend</name>
 	<description>backend portion of round trip demo</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

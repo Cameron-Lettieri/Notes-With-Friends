@@ -1,10 +1,10 @@
-package roundTrip.backend;
+package roundTrip.backendTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class BackendTestApplicationTests {
 
 	@Test
 	void contextLoads() {
