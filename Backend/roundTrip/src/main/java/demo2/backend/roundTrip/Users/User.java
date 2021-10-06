@@ -1,20 +1,21 @@
-package roundTrip.backendTest.Users;
+package demo2.backend.roundTrip.Users;
 
 import javax.persistence.CascadeType;
-import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import roundTrip.backendTest.Notes.*;
+import javax.persistence.Table;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import demo2.backend.roundTrip.Notes.*;
+
 
 @Entity
 @Table(name = "login")
@@ -24,14 +25,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
-    @Column(name = "Name", nullable = false, length = 45)
     private String name;
-    
-    @Column(nullable = false, unique = true, length = 45)
     private String email;
-    
-    @Column(nullable = false, length = 64)
     private String password;
     
     @OneToMany
@@ -97,3 +92,4 @@ public class User {
     }
 
 }
+
