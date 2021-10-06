@@ -9,17 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import android.widget.*;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
+
+import org.json.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         next.setOnClickListener(this::onClick);
         Button login = (Button) findViewById(R.id.Login);
         login.setOnClickListener(this::onClickLogin);
-        TextView testVariable = findViewById(R.id.Postman);
-        testVariable.setText(userPassword);
+        //TextView testVariable = findViewById(R.id.Postman);
+        //testVariable.setText(userPassword);
     }
 
     public void onClick(View view){
@@ -51,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         CheckPasswords(userUsername);
         EditText enteredPassword = (EditText) findViewById(R.id.PasswordTextBox);
         GetName(userUsername);
+        sendGetRequest();
         if(enteredPassword.getText().toString().equals(userPassword)){
             Intent intent = new Intent(this, HomeScreen.class);
             intent.putExtra(userNameMessage, userName);
@@ -59,6 +55,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void CheckPasswords(String username){
+
+//        CheckPasswords("hi");
+        createNewAcount();
+
+    }
+
+    private void createNewAcount() {
+        Button createAcc = findViewById(R.id.CreateAccount);
+        createAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CreateAccount.class));
+            }
+        });
+    }
+
+
+    private void sendGetRequest(){
         TextView testVariable = findViewById(R.id.Postman);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         String url = "https://fb3d6f71-3525-460a-824f-546264c15453.mock.pstmn.io/test/";
@@ -67,9 +81,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
 
                 try {
-                    JSONArray stats = response.getJSONArray(username);
+                    JSONArray stats = response.getJSONArray(userUsername);
                     JSONObject userInfo = stats.getJSONObject(0);
-                    testVariable.setText(userInfo.getString("password"));
                     userPassword = userInfo.getString("password");
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -88,7 +101,9 @@ public class MainActivity extends AppCompatActivity {
     private void GetName(String username){
         TextView testVariable = findViewById(R.id.Postman);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        String url = "coms-309-064.cs.iastate.edu/users";
+        //String url = "coms-309-064.cs.iastate.edu/users";
+        String url = "https://fb3d6f71-3525-460a-824f-546264c15453.mock.pstmn.io/test/";
+
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -110,4 +125,6 @@ public class MainActivity extends AppCompatActivity {
         });
         queue.add(stringRequest);
     }
+
+
 }

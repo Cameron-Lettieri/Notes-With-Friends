@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        String url = "https://34c9be26-288a-4686-97dd-369551556f50.mock.pstmn.io/object/";
+        String url = "http://coms-309-064.cs.iastate.edu/";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         textView.setText("Error occured.");
+                        error.printStackTrace();
 
                     }
                 });
