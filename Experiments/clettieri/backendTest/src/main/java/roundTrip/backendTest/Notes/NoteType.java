@@ -1,5 +1,6 @@
 package roundTrip.backendTest.Notes;
 
-public enum NoteType {
-
+public enum NoteType
+{
+	DEFALUT,TABLE,DRAW,CHECK;
 }
