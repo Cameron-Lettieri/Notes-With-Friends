@@ -1,6 +1,7 @@
 package roundTrip.backendTest.Users;
 
 import javax.persistence.CascadeType;
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +24,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column(name = "Name", nullable = false, length = 45)
     private String name;
+    
+    @Column(nullable = false, unique = true, length = 45)
     private String email;
+    
+    @Column(nullable = false, length = 64)
     private String password;
     
     @OneToMany
