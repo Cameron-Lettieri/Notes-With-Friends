@@ -14,12 +14,16 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView textView = findViewById(R.id.maintext);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         volleyGet();
     }
+
+
 
     public void volleyGet(){
         String url = "https://reqres.in/api/users?page=2";
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                     for(int i = 0; i < jsonArray.length(); i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String email = jsonObject.getString("email");
+
+                        textView.setText(email);
 
                         jsonResponses.add(email);
                     }

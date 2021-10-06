@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        String url = "https://34c9be26-288a-4686-97dd-369551556f50.mock.pstmn.io/object/";
+        String url = "https://34c9be26-288a-4686-97dd-369551556f50.mock.pstmn.io/post-test/";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
