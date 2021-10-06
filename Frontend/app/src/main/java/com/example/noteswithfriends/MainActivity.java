@@ -2,20 +2,15 @@ package com.example.noteswithfriends;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.*;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.json.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +18,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CheckPasswords("hi");
+
+//        CheckPasswords("hi");
+        createNewAcount();
+
     }
+
+    private void createNewAcount() {
+        Button createAcc = findViewById(R.id.CreateAccount);
+        createAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CreateAccount.class));
+            }
+        });
+    }
+
 
     private void sendGetRequest(){
         TextView testVariable = findViewById(R.id.Postman);
@@ -63,4 +72,6 @@ public class MainActivity extends AppCompatActivity {
         });
         queue.add(stringRequest);
     }
+
+
 }
