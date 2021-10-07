@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     private void sendGetRequest(){
         TextView testVariable = findViewById(R.id.Postman);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        String url = "https://fb3d6f71-3525-460a-824f-546264c15453.mock.pstmn.io/test/";
+        String url = "http://coms-309-064.cs.iastate.edu/users";
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         TextView testVariable = findViewById(R.id.Postman);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         //String url = "coms-309-064.cs.iastate.edu/users";
-        String url = "https://fb3d6f71-3525-460a-824f-546264c15453.mock.pstmn.io/test/";
+        String url = "http://coms-309-064.cs.iastate.edu/users";
 
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override

@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CreateAccount"></activity>
+
     </application>
 
 </manifest>
