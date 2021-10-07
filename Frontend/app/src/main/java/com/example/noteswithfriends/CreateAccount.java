@@ -7,7 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,24 +30,8 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_new_account);
 
-        RequestQueue requestQueue = new RequestQueue();
-
-
-
-        createNewUser();
         cancelCreation();
-
-    }
-
-    private void createNewUser() {
-        create = findViewById(R.id.createAccount);
-        addUser();
-        create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        createNewUser();
     }
 
     private void cancelCreation() {
@@ -50,24 +39,59 @@ public class CreateAccount extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                addUser();
                 finish();
             }
         });
     }
 
-    private void addUser(){
-        EditText nameText = findViewById(R.id.editTextTextPersonName);
-        EditText emailText = findViewById(R.id.editTextTextEmailAddress);
-        EditText passwordText = findViewById(R.id.editTextTextPassword);
-        //TODO
-        JSONObject newUser = new JSONObject();
-        try {
-            newUser.put("name", nameText.getText());
-            newUser.put("email", nameText.getText());
-            newUser.put("password", nameText.getText());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+    private void createNewUser() {
+        create = findViewById(R.id.createAccount);
+        create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addUser();
+            }
+        });
+    }
 
-    };
+    private void addUser(){
+        nameText = findViewById(R.id.editTextTextPersonName);
+        emailText = findViewById(R.id.editTextTextEmailAddress);
+        passwordText = findViewById(R.id.editTextTextPassword);
+
+        if (nameText.getText().toString().matches("") || emailText.getText().toString().matches("") || passwordText.getText().toString().matches(""))  {
+            // TODO
+            // HANDLES EMPTY PROMPTS
+        } else {
+            String postUrl = "http://coms-309-064.cs.iastate.edu/users";
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+            JSONObject user = new JSONObject();
+            try {
+                user.put("name", nameText.getText().toString());
+                user.put("email", emailText.getText().toString());
+                user.put("password", passwordText.getText().toString());
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, postUrl, user, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    System.out.println(response);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                }
+            });
+
+            requestQueue.add(jsonObjectRequest);
+
+            finish();
+        }
+    }
 }
