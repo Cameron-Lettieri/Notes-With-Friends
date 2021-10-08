@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         JsonArrayRequest stringRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-
                 try {
                     JSONObject userInfo = (JSONObject) response.get(arrayNumber);
                     userPassword = userInfo.get("password").toString();
