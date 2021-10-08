@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "login")
+@Table(name = "users")
 public class User {
 
      
@@ -25,13 +25,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @Column(name = "Name", nullable = false, length = 45)
+    @Column(name = "Name", nullable = false, length = 50)
     private String name;
     
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(nullable = false, unique = true, length = 50)
     private String email;
     
-    @Column(nullable = false, length = 64)
+    @Column(nullable = false, length = 60)
     private String password;
     
     @OneToMany

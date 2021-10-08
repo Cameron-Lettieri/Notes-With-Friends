@@ -36,18 +36,6 @@ public class CreateAccount extends AppCompatActivity {
 
         createNewUser();
         cancelCreation();
-
-    }
-
-    private void createNewUser() {
-        create = findViewById(R.id.createAccount);
-        addUser();
-        create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 
     private void cancelCreation() {
@@ -55,7 +43,18 @@ public class CreateAccount extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                addUser();
                 finish();
+            }
+        });
+    }
+
+    private void createNewUser() {
+        create = findViewById(R.id.createAccount);
+        create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addUser();
             }
         });
     }
@@ -107,4 +106,46 @@ public class CreateAccount extends AppCompatActivity {
     }
 
     ;
+
+
+    private void addUser2(){
+        nameText = findViewById(R.id.editTextTextPersonName);
+        emailText = findViewById(R.id.editTextTextEmailAddress);
+        passwordText = findViewById(R.id.editTextTextPassword);
+
+        if (nameText.getText().toString().matches("") || emailText.getText().toString().matches("") || passwordText.getText().toString().matches(""))  {
+            // TODO
+            // HANDLES EMPTY PROMPTS
+        } else {
+            String postUrl = "http://coms-309-064.cs.iastate.edu/users";
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+            JSONObject user = new JSONObject();
+            try {
+                user.put("name", nameText.getText().toString());
+                user.put("email", emailText.getText().toString());
+                user.put("password", passwordText.getText().toString());
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, postUrl, user, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    System.out.println(response);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                }
+            });
+
+            requestQueue.add(jsonObjectRequest);
+
+            finish();
+        }
+    }
 }
+
