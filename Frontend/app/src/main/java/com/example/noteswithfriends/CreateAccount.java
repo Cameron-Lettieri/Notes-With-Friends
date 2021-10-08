@@ -14,7 +14,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,9 +30,6 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_new_account);
 
-        //RequestQueue requestQueue = new RequestQueue();
-
-
         createNewUser();
         cancelCreation();
     }
@@ -43,7 +39,6 @@ public class CreateAccount extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addUser();
                 finish();
             }
         });
@@ -59,56 +54,8 @@ public class CreateAccount extends AppCompatActivity {
         });
     }
 
-    private void addUser() {
-        EditText nameText = findViewById(R.id.editTextTextPersonName);
-        EditText emailText = findViewById(R.id.editTextTextEmailAddress);
-        EditText passwordText = findViewById(R.id.editTextTextPassword);
-        //TODO
-        String postUrl = "http://coms-309-064.cs.iastate.edu/users";
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        JSONObject postPassword = new JSONObject();
-        JSONArray postDataArray = new JSONArray();
-        JSONObject postName = new JSONObject();
-        JSONObject postEmail = new JSONObject();
-        JSONObject postData = new JSONObject();
-        User user = new User("user", "email", "password");
-        try {
-
-            //postName.put("name", nameText.getText());
-            //postPassword.put("password", passwordText.getText());
-            //postDataArray.put(postPassword);
-            //postDataArray.put(postName);
-            //postEmail.put(emailText.getText(), postDataArray);
-            //postData.put("name", nameText.getText());
-            //postData.put("email", emailText.getText());
-            //postData.put("password", passwordText.getText());
-            postData.put("user", user);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, postUrl, postData, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                System.out.println("User added.");
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                System.out.println("Unsuccessful");
-                error.printStackTrace();
-            }
-        });
-
-        requestQueue.add(jsonObjectRequest);
-
-    }
-
-    ;
-
-
-    private void addUser2(){
+    private void addUser(){
         nameText = findViewById(R.id.editTextTextPersonName);
         emailText = findViewById(R.id.editTextTextEmailAddress);
         passwordText = findViewById(R.id.editTextTextPassword);
@@ -117,7 +64,7 @@ public class CreateAccount extends AppCompatActivity {
             // TODO
             // HANDLES EMPTY PROMPTS
         } else {
-            String postUrl = "http://coms-309-064.cs.iastate.edu/users";
+            String postUrl = "http://coms-309-064.cs.iastate.edu:8080/users";
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
             JSONObject user = new JSONObject();
