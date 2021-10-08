@@ -91,13 +91,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
                 try {
+
                     for(int i = 0; i < response.length(); i++){
-                        JSONObject userTest = (JSONObject) response.get(i);
+                        JSONObject userTest = response.getJSONObject(i);
                         if(userTest.get("email").toString().equals(userUsername)) {
-                            System.out.println(userTest.get("email").toString());
-                            System.out.println(userUsername.toString());
                             arrayNumber = i;
+                            allowIn = true;
                         }
+                        System.out.println(response.length());
+                        System.out.println(userTest.get("email").toString());
+                        System.out.println(userUsername.toString());
                     }
                     if(arrayNumber == -1){
                         arrayNumber = 0;

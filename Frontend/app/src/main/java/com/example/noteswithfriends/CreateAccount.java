@@ -11,6 +11,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -64,33 +65,31 @@ public class CreateAccount extends AppCompatActivity {
         EditText emailText = findViewById(R.id.editTextTextEmailAddress);
         EditText passwordText = findViewById(R.id.editTextTextPassword);
         //TODO
-        String postUrl = "http://coms-309-064.cs.iastate.edu/users";
+        String postUrl = "http://coms-309-064.cs.iastate.edu:8080/users";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         JSONObject postPassword = new JSONObject();
         JSONArray postDataArray = new JSONArray();
         JSONObject postName = new JSONObject();
         JSONObject postEmail = new JSONObject();
-        JSONObject postData = new JSONObject();
+
         User user = new User("user", "email", "password");
         try {
 
-            //postName.put("name", nameText.getText());
-            //postPassword.put("password", passwordText.getText());
-            //postDataArray.put(postPassword);
-            //postDataArray.put(postName);
-            //postEmail.put(emailText.getText(), postDataArray);
-            //postData.put("name", nameText.getText());
-            //postData.put("email", emailText.getText());
-            //postData.put("password", passwordText.getText());
-            postData.put("user", user);
+            postName.put("name", nameText.getText());
+            postPassword.put("password", passwordText.getText());
+            postDataArray.put(postPassword);
+            postDataArray.put(postName);
+            postEmail.put("email", emailText.getText());
+            postDataArray.put(postEmail);
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, postUrl, postData, new Response.Listener<JSONObject>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, postUrl, postDataArray, new Response.Listener<JSONArray>() {
             @Override
-            public void onResponse(JSONObject response) {
+            public void onResponse(JSONArray response) {
                 System.out.println("User added.");
             }
         }, new Response.ErrorListener() {
@@ -101,7 +100,7 @@ public class CreateAccount extends AppCompatActivity {
             }
         });
 
-        requestQueue.add(jsonObjectRequest);
+        requestQueue.add(jsonArrayRequest);
 
     }
 
