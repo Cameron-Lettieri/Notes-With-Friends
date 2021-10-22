@@ -2,6 +2,8 @@ package Users;
 
 import java.util.List;
 
+import Notes.Note;
+import Notes.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.persistence.OneToMany;
 
 
+import Notes.Note;
 import Notes.Note.*;
 
 import java.util.ArrayList;
