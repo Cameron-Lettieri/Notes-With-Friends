@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.example.noteswithfriends"},{"l":"com.example.noteswithfriends.Activities"},{"l":"com.example.noteswithfriends.MVPTrial"},{"l":"com.example.noteswithfriends.Notes"},{"l":"com.example.noteswithfriends.Users"},{"l":"com.example.noteswithfriends.Utility"},{"l":"com.example.noteswithfriends.Volley"}]

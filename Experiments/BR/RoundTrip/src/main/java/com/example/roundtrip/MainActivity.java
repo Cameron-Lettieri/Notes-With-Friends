@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private void sendGetRequest(){
         TextView testVariable = findViewById(R.id.TestVariable);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        String url = "http://ip.jsontest.com/";
+        String url = "http://coms-309-064.cs.iastate.edu/users";
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         queue.add(stringRequest);
-
     }
 
 
