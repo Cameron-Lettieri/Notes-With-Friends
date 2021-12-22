@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:backgroundTint="#121212"
+    tools:context=".Activities.CreateNote">
+
+    <ImageButton
+        android:id="@+id/cancelNoteButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="#F1EC40"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        android:contentDescription="back arrow if want to cancel" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="822dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="822dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/docNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide_regular"
+        android:text="@string/DocNameTitle"
+        android:textColor="#E3E3E3"
+        app:layout_constraintBottom_toTopOf="@+id/newDocName"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
+
+    <TextView
+        android:id="@+id/docNameTitle2"
+        android:layout_width="249dp"
+        android:layout_height="110dp"
+        android:fontFamily="@font/audiowide_regular"
+        android:padding="10dp"
+        android:text="@string/CreateDocTitle"
+        android:textAlignment="center"
+        android:textColor="#E3E3E3"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+    <EditText
+        android:id="@+id/newDocName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Untitled Document"
+        android:backgroundTint="#E3E3E3"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textEmailAddress"
+        android:text="Untitled document"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/ChecklistButton"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/docNameTitle2" />
+
+    <ToggleButton
+        android:id="@+id/DefaultButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F1EC40"
+        android:checked="false"
+        android:fontFamily="@font/audiowide_regular"
+        android:textColor="#121212"
+        android:textOff="@string/DefaultNote"
+        android:textOn="@string/DefaultNote"
+        app:layout_constraintBottom_toTopOf="@+id/TableButton"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/ChecklistButton" />
+
+    <ToggleButton
+        android:id="@+id/TableButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F1EC40"
+        android:checked="false"
+        android:fontFamily="@font/audiowide_regular"
+        android:textColor="#121212"
+        android:textOff="@string/TableNote"
+        android:textOn="@string/TableNote"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/ChecklistButton" />
+
+    <ToggleButton
+        android:id="@+id/ChecklistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F1EC40"
+        android:checked="false"
+        android:fontFamily="@font/audiowide_regular"
+        android:textColor="#121212"
+        android:textOff="@string/ChecklistNote"
+        android:textOn="@string/ChecklistNote"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

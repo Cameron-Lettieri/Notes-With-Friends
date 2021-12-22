@@ -1,9 +1,10 @@
 # Example  .gitlab-ci.yml file
 stages:
-  - maventest
   - mavenbuild
-  - androidtest
+  - maventest
+  - mavenDeploy
   - androidbuild
+  - androidtest
 
 
 maven-build:   #this is a JOB
@@ -13,6 +14,11 @@ maven-build:   #this is a JOB
   script:
     - cd Backend
     - mvn package -B
+  only:
+    refs:
+      - main
+    changes:
+      - Backend/**/*
 
 maven-test:
   stage: maventest
@@ -21,11 +27,30 @@ maven-test:
   script:
     - cd Backend
     - mvn test
+  only:
+    refs:
+      - main
+    changes:
+      - Backend/**/*
   artifacts:
     paths:
       - Backend/target/*.jar
 
-    
+autoDeploy:
+  stage: mavenDeploy  #do make a stage with same name!
+  tags:
+   - springboot_tag
+  script:
+    - cd Backend
+    - mvn package
+    - sudo mv target/*.jar /target/web-demo.jar 
+    - sudo systemctl stop system-web-demo
+    - sudo systemctl start system-web-demo
+  only:
+    refs:
+      - main
+    changes:
+      - Backend/**/*
 
 android-build:
   image: javiersantos/android-ci:latest
@@ -38,6 +63,11 @@ android-build:
   script:
     - cd Frontend
     - ./gradlew build
+  only:
+    refs:
+      - main
+    changes:
+      - Frontend/**/*
   artifacts:
     paths:
     - Android_test/app/build/outputs/
@@ -53,5 +83,8 @@ android-test:
   script:
     - cd Frontend
     - ./gradlew test
-
-
+  only:
+    refs:
+      - main
+    changes:
+      - Frontend/**/*

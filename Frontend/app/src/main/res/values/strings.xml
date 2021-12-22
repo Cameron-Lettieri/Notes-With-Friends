@@ -8,6 +8,22 @@
     <string name="NameText">Name</string>
     <string name="CreateAccount">Create Account</string>
     <string name="Login">Login</string>
-    <string name="WordsWithFriends">Words With Friends</string>
+    <string name="NotesWithFriends">Notes With Friends</string>
     <string name="cancelAction">Cancel</string>
+    <string name="HomePageWordsWithFriends">Words With Friends</string>
+    <string name="NewDocument">New Document</string>
+    <string name="NewFolder">New Folder</string>
+    <string name="CreateFolder">Create Folder</string>
+    <string name="NameFolder">Enter Folder Name:</string>
+    <string name="LogoutButton">Logout</string>
+    <string name="EnterDocumentName">Enter Document Name:</string>
+    <string name="CreateDocumentName">Create Document</string>
+    <string name="CreateNewNote">Create Note</string>
+    <string name="DefaultNote">Default Note</string>
+    <string name="ChecklistNote">Check-List Note</string>
+    <string name="TableNote">Table Note</string>
+    <string name="DocName">Document Name</string>
+    <string name="DocNameTitle">Name of your document:</string>
+    <string name="CreateDocTitle">Create new Note</string>
+    <string name="UsersURL">http://coms-309-064.cs.iastate.edu:8080/users</string>
 </resources>

@@ -3,13 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
         <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/activity_create_account.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/activity_document_screen.xml" value="0.2595108695652174" />
+        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/activity_enter_name_of_document.xml" value="0.2595108695652174" />
         <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/activity_home_screen.xml" value="0.21510416666666668" />
-        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/activity_main.xml" value="0.1912568306010929" />
-        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/create_account.xml" value="0.25416666666666665" />
-=======
         <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/activity_new_folder_screen.xml" value="0.2595108695652174" />
+        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/create_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/create_new_account.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/bdrei/3_rk_7/Frontend/app/src/main/res/layout/create_new_note.xml" value="0.25" />
         <entry key="..\:/Users/cdimm/Desktop/ISU Classes/Year 2/Semester 1/COM S 309/3_rk_7/Frontend/app/src/main/res/layout/activity_create_account.xml" value="0.1671195652173913" />
         <entry key="..\:/Users/cdimm/Desktop/ISU Classes/Year 2/Semester 1/COM S 309/3_rk_7/Frontend/app/src/main/res/layout/activity_home_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/cdimm/Desktop/ISU Classes/Year 2/Semester 1/COM S 309/3_rk_7/Frontend/app/src/main/res/layout/activity_main.xml" value="0.2" />
@@ -17,11 +19,19 @@
         <entry key="..\:/Users/cdimm/Desktop/ISU Classes/Year 2/Semester 1/COM S 309/3_rk_7/Frontend/app/src/main/res/layout/create_new_account.xml" value="0.176" />
         <entry key="..\:/Users/cdimm/Desktop/ISU Classes/Year 2/Semester 1/COM S 309/3_rk_7/Frontend/app/src/main/res/layout/create_new_account2.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/cdimm/Desktop/ISU Classes/Year 2/Semester 1/COM S 309/3_rk_7/Frontend/app/src/main/res/layout/test.xml" value="0.25416666666666665" />
->>>>>>> 65aabce4e1c3e89437f0eea381298f30d62b0206
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="JavadocGenerationManager">
+<<<<<<< HEAD
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../../JavaDoc" />
+=======
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Downloads" />
+>>>>>>> b5d0546787f4099ca1252fecad8897ed279098fb
+    <option name="OTHER_OPTIONS" value="--ignore-source-errors" />
+    <option name="OPTION_INCLUDE_LIBS" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
